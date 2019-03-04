@@ -4,7 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
 
   let store;
 
@@ -21,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-
+  //TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-
-  ReactDOM.render(<h1>Welcome to Job Finder</h1>, root);
+  //TESTING
+  
+  const root = document.getElementById('root');
+  ReactDOM.render(<Root store={ store }/>, root);
 });
