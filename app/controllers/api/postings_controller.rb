@@ -12,6 +12,7 @@ class Api::PostingsController < ApplicationController
   end
 
   def create
+    debugger
     @posting = Posting.new(posting_params)
 
     if @posting.save

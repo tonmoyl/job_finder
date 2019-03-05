@@ -1,7 +1,7 @@
 import React from 'react';
 import Greeting from './greeting/greeting_container';
 import Search from './search/search_container';
-import PostingForm from './posting/posting_form';
+import PostingForm from './posting/posting_form_container';
 
 const App = () => (
   <div>

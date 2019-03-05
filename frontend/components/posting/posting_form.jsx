@@ -1,20 +1,21 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
-
+import merge from 'lodash/merge';
 
 export default class PostingForm extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      id: "",
+      id: null,
       company: "",
+      role: "",
       logo_url: "",
       address: "",
       link_url: "",
       description: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+
   };
 
   componentDidMount(){
@@ -53,12 +54,12 @@ export default class PostingForm extends React.Component{
   };
 
   handleSubmit(e) {
-    // e.preventDefault();
-    // let body = {};
-    // body["quillText"] = this.quill.getContents();
-    // body["plainText"] = this.quill.getText();
-    // let parsedBody = JSON.stringify(body);
-    //
+    e.preventDefault();
+
+    const posting = merge({}, this.state);
+
+    this.props.processForm(posting)
+
     // if (this.state.notebook_id === null) {
     //   this.setState({body: parsedBody, postingbook_id: Object.keys(this.props.notebooks)[0]});
     //   this.state.notebook_id = Object.keys(this.props.notebooks)[0];
@@ -104,6 +105,56 @@ export default class PostingForm extends React.Component{
                 onChange={this.update('company')}
                 className="posting-company"
                 placeholder="Company Posting"
+                />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.role}
+                onChange={this.update('role')}
+                className="posting-role"
+                placeholder="Role of the Position"
+                />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.logo_url}
+                onChange={this.update('logo_url')}
+                className="posting-logo-url"
+                placeholder="Enter URL"
+                />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.address}
+                onChange={this.update('address')}
+                className="posting-address"
+                placeholder="Enter address"
+                />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.link_url}
+                onChange={this.update('link_url')}
+                className="posting-link-url"
+                placeholder="Enter link URL"
+                />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                value={this.state.description}
+                onChange={this.update('description')}
+                className="posting-description"
+                placeholder="Description Posting"
                 />
             </label>
 
