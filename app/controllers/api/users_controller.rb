@@ -13,7 +13,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    debugger
     params.require(:user).permit(:username, :password)
   end
 end

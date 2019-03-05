@@ -1,5 +1,4 @@
-class PostingsController < ApplicationController
-
+class Api::PostingsController < ApplicationController
   def destroy
     @posting = Posting.find(params[:id])
     @posting.destroy
@@ -51,6 +50,5 @@ class PostingsController < ApplicationController
       :description
     )
   end
-
 
 end
