@@ -24,9 +24,10 @@ const App = () => (
     </Switch>
 
     <h1>Job Finder</h1>
+    <Greeting />
     <Route path="/" component={Search} />
-    <Route exact path="/home" component={Greeting} />
-    <Route exact path="/home" component={PostingIndex} />
+    <AuthRoute path="/" component={Greeting} />
+    <AuthRoute path="/" component={PostingIndex} />
 
   </div>
 );
