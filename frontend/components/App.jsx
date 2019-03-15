@@ -5,6 +5,7 @@ import PostingForm from './posting/posting_form_container';
 import PostingIndex from './posting/posting_index_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import EditPersonal from './profile/edit_personal_container';
 
 import {
   Route,
@@ -26,6 +27,9 @@ const App = () => (
     <h1>Job Finder</h1>
     <Greeting />
     <Route path="/" component={Search} />
+
+    <ProtectedRoute exact path="/personal" component={EditPersonal} />
+
     <AuthRoute path="/" component={Greeting} />
     <AuthRoute path="/" component={PostingIndex} />
 

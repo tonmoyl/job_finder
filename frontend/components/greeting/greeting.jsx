@@ -13,6 +13,7 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="header-group">
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
+      <Link to="/personal">Edit Profile</Link>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
   );
