@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_190124) do
+ActiveRecord::Schema.define(version: 2019_03_06_142241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "credentials", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "about_me", default: "", null: false
+    t.text "education", default: "", null: false
+    t.text "skills", default: "", null: false
+    t.text "looking_for", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credentials_on_user_id"
+  end
 
   create_table "postings", force: :cascade do |t|
     t.text "company", null: false
