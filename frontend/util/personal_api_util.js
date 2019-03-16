@@ -1,7 +1,7 @@
-export const fetchPersonal = (id) => {
+export const fetchPersonal = () => {
   return $.ajax({
     method: 'GET',
-    url: `api/personals/${id}`
+    url: `api/credentials/1`
   });
 };
 

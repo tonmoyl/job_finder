@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-export default class SessionForm extends React.Component {
+export default class PersonalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,8 +15,16 @@ export default class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  componentWillReceiveProps(nextProps) {
-    debugger
+  componentDidMount() {
+    this.props.fetchPersonal().then( personal => {
+      this.setState({
+        id: personal.id,
+        about_me: personal.about_me,
+        education: personal.education,
+        skills: personal.skills,
+        looking_for: personal.looking_for
+      })
+    })
   }
 
   update(field) {

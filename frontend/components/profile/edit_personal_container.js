@@ -12,7 +12,7 @@ const mapStateToProps = ({ entities }) => {
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (profile) => dispatch(updatePersonal(profile)),
-    fetchPersonal: (personal) => dispatch(fetchPersonal(personal))
+    fetchPersonal: (personal) => dispatch(fetchPersonal())
   }
 }
 

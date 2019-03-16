@@ -15,9 +15,9 @@ export const updatePersonal = (personal) => {
   }
 }
 
-export const fetchPersonal = (id) => {
+export const fetchPersonal = () => {
   return dispatch => {
-    return APIUtil.fetchPersonal(id).then(personal => {
+    return APIUtil.fetchPersonal().then(personal => {
       return dispatch(receivePersonal(personal));
     });
   };
