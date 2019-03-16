@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PersonalInfo from './personal_info';
+import PersonalInfo from './personal_form';
+import { updatePersonal, fetchPersonal } from '../../actions/personal_actions';
 
 const mapStateToProps = ({ entities }) => {
   return {
-    componentType: "posting-index",
+    componentType: "personal-info"
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    processForm: (profile) => dispatch(updatePersonal(profile)),
+    fetchPersonal: (personal) => dispatch(fetchPersonal(personal))
   }
 }
 

@@ -12,6 +12,7 @@ class Api::CredentialsController < ApplicationController
 
 
   def update
+    debugger
     @credential = current_user.credential
 
     if @credential.update(credential_params)

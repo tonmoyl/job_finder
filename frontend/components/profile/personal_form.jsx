@@ -6,12 +6,18 @@ export default class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
       about_me: '',
       education: '',
       skills: "",
       looking_for: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
+
+  componentWillReceiveProps(nextProps) {
+    debugger
+  }
 
   update(field) {
     return e => this.setState({
@@ -21,8 +27,8 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    const profile = Object.assign({}, this.state);
+    this.props.processForm(profile)
   };
 
   render() {
@@ -61,6 +67,7 @@ export default class SessionForm extends React.Component {
               placeholder="Enter Job Description of What You Are Looking For"
             />
           </label>
+          <button className="submit-btn" onClick={this.handleSubmit}>Edit Personal</button>
         </form>
       </div>
     )
