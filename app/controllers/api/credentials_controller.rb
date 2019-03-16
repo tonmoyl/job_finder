@@ -13,18 +13,17 @@ class Api::CredentialsController < ApplicationController
 
   def update
     @credential = current_user.credential
-
+debugger
     if @credential.update(credential_params)
       render :show
     else
-      render json: @posting.errors.full_messages
+      render json: @credential.errors.full_messages
     end
   rescue
-    render json: ['Posting not found'], status: :not_found
+    render json: ['Credential not found'], status: :not_found
   end
 
   def show
-    debugger
     @credential = current_user.credential
     render :show
   end
@@ -32,7 +31,7 @@ class Api::CredentialsController < ApplicationController
   private
 
   def credential_params
-    params.require(:credential).permit(
+    params.require(:personal).permit(
       :about_me,
       :education,
       :skills,

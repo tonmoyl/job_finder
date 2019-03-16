@@ -4,7 +4,8 @@ import { RECEIVE_PERSONAL } from '../actions/personal_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const predefinedState = {
-  id: null,
+  id: "",
+  user_id: "",
   about_me: '',
   education: '',
   skills: "",
@@ -16,9 +17,7 @@ const personalsReducer = (state = predefinedState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_PERSONAL:
-    debugger
-      const newPersonal = { [action.personal.id]: action.personal };
-      return merge({}, state, newPersonal);
+      return merge({}, state, action.personal);
     default:
       return state;
   }

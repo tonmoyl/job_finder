@@ -6,7 +6,7 @@ export default class PersonalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
+      id: '',
       about_me: '',
       education: '',
       skills: "",
@@ -16,7 +16,8 @@ export default class PersonalForm extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetchPersonal().then( personal => {
+    console.log(this.state);
+    this.props.fetchPersonal().then( ({personal}) => {
       this.setState({
         id: personal.id,
         about_me: personal.about_me,
@@ -24,6 +25,8 @@ export default class PersonalForm extends React.Component {
         skills: personal.skills,
         looking_for: personal.looking_for
       })
+
+      console.log(this.state)
     })
   }
 
@@ -63,7 +66,7 @@ export default class PersonalForm extends React.Component {
             <input
               type="text"
               value={this.state.Education}
-              onChange={this.update('Education')}
+              onChange={this.update('education')}
               placeholder="Enter Education"
             />
           </label>
@@ -75,7 +78,7 @@ export default class PersonalForm extends React.Component {
               placeholder="Enter Job Description of What You Are Looking For"
             />
           </label>
-          <button className="submit-btn" onClick={this.handleSubmit}>Edit Personal</button>
+          <input className="session-submit submit-btn" type="submit" value="Edit Personal" />
         </form>
       </div>
     )
