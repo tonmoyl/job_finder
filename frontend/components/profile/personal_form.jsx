@@ -16,7 +16,6 @@ export default class PersonalForm extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.state);
     this.props.fetchPersonal().then( ({personal}) => {
       this.setState({
         id: personal.id,
@@ -25,8 +24,6 @@ export default class PersonalForm extends React.Component {
         skills: personal.skills,
         looking_for: personal.looking_for
       })
-
-      console.log(this.state)
     })
   }
 
@@ -65,7 +62,7 @@ export default class PersonalForm extends React.Component {
           <label>
             <input
               type="text"
-              value={this.state.Education}
+              value={this.state.education}
               onChange={this.update('education')}
               placeholder="Enter Education"
             />

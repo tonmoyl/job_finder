@@ -13,7 +13,7 @@ class Api::CredentialsController < ApplicationController
 
   def update
     @credential = current_user.credential
-debugger
+
     if @credential.update(credential_params)
       render :show
     else

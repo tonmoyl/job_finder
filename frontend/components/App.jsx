@@ -3,6 +3,7 @@ import Greeting from './greeting/greeting_container';
 import Search from './search/search_container';
 import PostingForm from './posting/posting_form_container';
 import PostingIndex from './posting/posting_index_container';
+import PostingItem from './posting/posting_item_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import EditPersonal from './profile/edit_personal_container';
@@ -29,6 +30,7 @@ const App = () => (
     <Route path="/" component={Search} />
 
     <ProtectedRoute exact path="/personal" component={EditPersonal} />
+    <Route exact path="/job/:jobId" component={PostingItem} />
 
     <AuthRoute path="/" component={Greeting} />
     <AuthRoute path="/" component={PostingIndex} />

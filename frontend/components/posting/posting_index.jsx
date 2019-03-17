@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import NoteItemContainer from './posting_item_container';
 
 export default class PostingIndex extends React.Component{
@@ -114,11 +115,17 @@ export default class PostingIndex extends React.Component{
     }
     let postings = postingIds.map( (id) => {
         count ++;
+
+        const followLink = `/job/${id}`;
+
         return (
           <li key={id}>
-            {this.props.postings[id].company}
-            <br />
-            {this.props.postings[id].role}
+            <Link to={followLink}>
+              {this.props.postings[id].company}
+              <br />
+              {this.props.postings[id].role}
+
+            </Link>
           </li>
         );
       });
