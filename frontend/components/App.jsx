@@ -15,6 +15,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (

@@ -10,7 +10,7 @@ export default class PostingItem extends React.Component{
     if (this.props.postingItem) {
       show = this.props.postingItem.company
     }
-    console.log(this.props.postingItem)
+
     return (
       <div className="posting-item">
         Posting Item
@@ -18,6 +18,5 @@ export default class PostingItem extends React.Component{
         {show}
       </div>
     )
-
   }
 }
