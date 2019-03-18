@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   const postingItem = postings[jobId]
 
   return {
+    goBack: ownProps.history.goBack,
     jobID: ownProps.match.params.job,
     postings: state.entities.postings,
     postingItem: postingItem

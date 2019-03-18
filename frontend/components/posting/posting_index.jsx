@@ -9,16 +9,16 @@ export default class PostingIndex extends React.Component{
       order: "newest",
       postingIds: []
     }
-    this.updateOrder = this.updateOrder.bind(this);
-    this.sortAlphabetical = this.sortAlphabetical.bind(this);
-    this.sortUpdate = this.sortUpdate.bind(this);
-    this.renderOrder = this.renderOrder.bind(this);
+    // this.updateOrder = this.updateOrder.bind(this);
+    // this.sortAlphabetical = this.sortAlphabetical.bind(this);
+    // this.sortUpdate = this.sortUpdate.bind(this);
+    // this.renderOrder = this.renderOrder.bind(this);
   }
 
   componentWillMount(){
     this.props.fetchPostings().then( (postings) => {
       const postingIds = Object.keys(postings.postings);
-      this.setState({postingIds: this.updateOrder()})
+      // this.setState({postingIds: this.updateOrder()})
     });
   }
 
@@ -132,12 +132,12 @@ export default class PostingIndex extends React.Component{
 
     return(
       <div id={this.props.componentType} className={this.props.componentType}>
-        <select id="dropdown-order" className="postings-dropdown" onChange={this.renderOrder} defaultValue="newest">
-          <option className="value-order" value="newest">Most Recent</option>
-          <option className="value-order" value="oldest">Least Recent</option>
-          <option className="value-order" value="alphabetical">Sort by Title (a-z)</option>
-          <option className="value-order" value="reverse-alphabetical">Sort by Title (z-a)</option>
-        </select>
+        // <select id="dropdown-order" className="postings-dropdown" onChange={this.renderOrder} defaultValue="newest">
+        //   <option className="value-order" value="newest">Most Recent</option>
+        //   <option className="value-order" value="oldest">Least Recent</option>
+        //   <option className="value-order" value="alphabetical">Sort by Title (a-z)</option>
+        //   <option className="value-order" value="reverse-alphabetical">Sort by Title (z-a)</option>
+        // </select>
         <div className="posting-index-header">
           <h2>{this.props.componentTitle}</h2>
           <div className="postingslist-footer">
