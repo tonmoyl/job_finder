@@ -5,7 +5,7 @@ import { fetchPostings } from '../../actions/posting_actions';
 
 const mapStateToProps = ({ entities }) => {
   return {
-    componentType: "posting-index",
+    componentType: "recent",
     postings: entities.postings,
     postingIds: Object.keys(entities.postings)
   };
