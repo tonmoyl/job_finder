@@ -24,14 +24,16 @@ export default class Search extends React.Component {
   render() {
 
     return (
-      <div id="search-form" className="search-side dropdown">
-        <input
-          type="text"
-          placeholder="Search Jobs..."
-          id="myInput"
-          className="search-input"
-          onChange={this.updateInput}
-          ></input>
+      <div id="search-form" className="search">
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search Jobs..."
+            id="myInput"
+            className="search-input"
+            onChange={this.updateInput}
+            ></input>
+        </div>
       </div>
     )
   }
