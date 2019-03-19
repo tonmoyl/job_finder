@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: teal;
+  height: 50px;
+}
+
+.header-title {
+  font-size: 30px;
+  color: white;
+  margin: auto 10px;
+}
+
+.login-signup {
+  width: 150px;
+  margin: auto 10px;
+}

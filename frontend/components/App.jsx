@@ -21,19 +21,24 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
 
+
+    <div className="header">
+      <div className="header-title">Job Finder</div>
+      <AuthRoute path="/" component={Greeting} />
+    </div>
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
 
-    <h1>Job Finder</h1>
-    <Greeting />
+
+
     <Route path="/" component={Search} />
 
     <ProtectedRoute exact path="/personal" component={EditPersonal} />
     <Route exact path="/job/:jobId" component={PostingItem} />
 
-    <AuthRoute path="/" component={Greeting} />
     <AuthRoute path="/" component={PostingIndex} />
 
   </div>
