@@ -1,6 +1,7 @@
 .list-item {
   margin: 20px;
   background-color: red;
+  position: relative
 }
 
 .list-item a {
@@ -19,4 +20,11 @@
 
 .list-information {
   margin: auto 20px;
+}
+
+.date {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
 }

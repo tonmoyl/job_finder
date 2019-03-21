@@ -28,6 +28,10 @@ export default class ListItem extends React.Component{
             </div>
           </div>
 
+          <div className="date">
+            {this.props.date}
+          </div>
+
         </Link>
 
       </div>
