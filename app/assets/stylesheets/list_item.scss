@@ -1,0 +1,22 @@
+.list-item {
+  margin: 20px;
+  background-color: red;
+}
+
+.list-item a {
+  display: flex;
+}
+
+.logo {
+  height: 100px;
+  width: 250px;
+}
+
+.logo img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.list-information {
+  margin: auto 20px;
+}

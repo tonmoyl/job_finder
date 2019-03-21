@@ -10,21 +10,24 @@ export default class ListItem extends React.Component{
     return (
       <div className="list-item">
         <Link to={`/job/${this.props.id}`}>
-          <div className="role">
-            {this.props.role}
-          </div>
-
-          <div className="company-name">
-            {this.props.company}
-          </div>
-
-          <div className="address">
-            {this.props.address}
-          </div>
-
           <div className="logo">
-            <img src="#{this.props.logo_url}" alt="" />
+            <img src={this.props.logo_url} alt="" />
           </div>
+
+          <div className="list-information">
+            <div className="role">
+              {this.props.role}
+            </div>
+
+            <div className="company-name">
+              {this.props.company}
+            </div>
+
+            <div className="address">
+              {this.props.address}
+            </div>
+          </div>
+
         </Link>
 
       </div>
