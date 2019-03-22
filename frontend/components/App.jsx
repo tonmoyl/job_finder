@@ -39,8 +39,6 @@ const App = () => (
     <ProtectedRoute exact path="/personal" component={EditPersonal} />
     <Route exact path="/job/:jobId" component={PostingItem} />
 
-    <AuthRoute path="/" component={PostingIndex} />
-
   </div>
 );
 

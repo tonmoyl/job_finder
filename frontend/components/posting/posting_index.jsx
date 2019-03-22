@@ -16,10 +16,13 @@ export default class PostingIndex extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchPostings().then( (postings) => {
-      const postingIds = Object.keys(postings.postings);
-      // this.setState({postingIds: this.updateOrder()})
-    });
+    this.props.fetchPostings();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      postingIds: nextProps.postingIds
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -28,81 +31,6 @@ export default class PostingIndex extends React.Component{
       this.setState({postingIds: postingIds})
     }
   }
-  //
-  // renderOrder(){
-  //   this.updateOrder();
-  //   this.setState({});
-  // }
-  //
-  // updateOrder(){
-  //   const order = document.getElementById("dropdown-order").value;
-  //
-  //   switch(order){
-  //     case "newest":
-  //       return this.sortUpdate();
-  //     case "oldest":
-  //       return this.sortUpdate().reverse();
-  //     case "alphabetical":
-  //       return this.sortAlphabetical();
-  //     case "reverse-alphabetical":
-  //       return this.sortAlphabetical().reverse();
-  //     default:
-  //       break
-  //   }
-  //
-  //   this.state.order = order;
-  //   return null;
-  // }
-  //
-  // sortAlphabetical() {
-  //   let postings = this.props.postings;
-  //   let sorted = [];
-  //
-  //   for (var id in this.props.postings) {
-  //     sorted.push([this.props.postings[id].title, id]);
-  //   }
-  //
-  //   function comparator(a,b) {
-  //     if (a[0].toLowerCase() < b[0].toLowerCase()) return -1;
-  //     if (a[0].toLowerCase() > b[0].toLowerCase()) return 1;
-  //     if (a[0].toLowerCase() === b[0].toLowerCase()) return 0;
-  //   }
-  //
-  //
-  //   sorted = sorted.sort(comparator);
-  //   sorted = sorted.map( (item) => {
-  //     return item[1];
-  //   });
-  //   this.state.postingIds = sorted;
-  //   // this.setState({postingIds: sorted});
-  //   return sorted;
-  // }
-  //
-  // sortUpdate() {
-  //   let postings = this.props.postings;
-  //   let sorted = [];
-  //
-  //   for (var id in postings) {
-  //     let postingUpdate = Date.parse(this.props.postings[id].updated_at);
-  //
-  //     sorted.push([postingUpdate, id]);
-  //   }
-  //
-  //   function comparator(a,b) {
-  //     if (a[0] < b[0]) return -1;
-  //     if (a[0] > b[0]) return 1;
-  //     if (a[0] === b[0]) return 0;
-  //   }
-  //
-  //
-  //   sorted = sorted.sort(comparator);
-  //   sorted = sorted.map( (item) => {
-  //     return item[1];
-  //   });
-  //   // this.setState({postingIds: sorted});
-  //   this.state.postingIds = sorted;
-  //   return sorted.reverse();
-  // }
 
   render(){
     let count = 0;

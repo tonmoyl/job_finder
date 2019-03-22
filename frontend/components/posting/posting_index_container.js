@@ -7,7 +7,7 @@ const mapStateToProps = ({ entities }, ownProps) => {
   return {
     componentType: "recent",
     postings: entities.postings,
-    postingIds: Object.keys(entities.postings)
+    postingIds: ownProps.viewIds
   };
 };
 
