@@ -13,18 +13,15 @@ export default class Search extends React.Component {
     }
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.searchItems = this.searchItems.bind(this);
+    this.clearInput = this.clearInput.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       postings: nextProps.postings,
-      viewIds: nextProps.postingIds
+      viewIds: nextProps.postingIds,
+      allIds: nextProps.postingIds
     })
-  }
-
-  searchItems() {
-
   }
 
   handleSubmit(e) {
@@ -57,7 +54,6 @@ export default class Search extends React.Component {
     }
 
     this.setState({viewIds: foundItems});
-
   }
 
   update(property) {
@@ -68,6 +64,11 @@ export default class Search extends React.Component {
     console.log('hitx2')
   }
 
+  clearInput() {
+    document.getElementById('search-input').value = "";
+    this.setState({viewIds: this.state.allIds});
+  }
+
 
   render() {
     return (
@@ -75,10 +76,9 @@ export default class Search extends React.Component {
         <div id="search-form" className="search">
           <div className="search-bar">
             <form onSubmit={this.handleSubmit} className="search-form">
-              <input
+              <input id="search-input"
                 type="text"
                 placeholder="Search Jobs..."
-                id="myInput"
                 className="search-input"
                 onChange={this.update('search')}
                 ></input>
@@ -87,6 +87,8 @@ export default class Search extends React.Component {
                 value="Search"
                 />
             </form>
+
+            <button onClick={this.clearInput}>Clear</button>
 
           </div>
         </div>

@@ -24,7 +24,7 @@ const App = () => (
 
     <div className="header">
       <div className="header-title">Job Finder</div>
-      <AuthRoute path="/" component={Greeting} />
+      <Route path="/" component={Greeting} />
     </div>
 
     <Switch>
@@ -32,11 +32,10 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
 
+    <ProtectedRoute exact path="/personal" component={EditPersonal} />
 
 
     <Route path="/" component={Search} />
-
-    <ProtectedRoute exact path="/personal" component={EditPersonal} />
     <Route exact path="/job/:jobId" component={PostingItem} />
 
   </div>

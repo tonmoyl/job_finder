@@ -42,6 +42,9 @@ export default class PersonalForm extends React.Component {
   render() {
     return (
       <div className='edit-personal'>
+        <button className="btn" onClick={this.props.goBack}>
+          Back
+        </button>
         <form onSubmit={this.handleSubmit}>
           <label>
             <input
