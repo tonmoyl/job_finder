@@ -10,6 +10,14 @@ class User < ApplicationRecord
   class_name: :Credential,
   foreign_key: :user_id
 
+  has_many :submitted_association,
+  class_name: :Submit,
+  foreign_key: :user_id
+
+  has_many :submitted_applications,
+  through: :submitted_association,
+  source: :posting
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)
