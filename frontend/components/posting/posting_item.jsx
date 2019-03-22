@@ -12,6 +12,7 @@ export default class PostingItem extends React.Component{
     let address = "";
     let link_url = "";
     let description = "";
+    let descriptions = "";
     if (this.props.postingItem) {
       company = this.props.postingItem.company;
       role = this.props.postingItem.role;
@@ -19,6 +20,7 @@ export default class PostingItem extends React.Component{
       address = this.props.postingItem.address;
       link_url = this.props.postingItem.link_url;
       description = this.props.postingItem.description;
+
     }
 
     return (
@@ -46,7 +48,7 @@ export default class PostingItem extends React.Component{
             </div>
 
             <div className="link">
-              <a href={link_url}>{link_url}</a>
+              <a href={link_url}>Link to Website</a>
             </div>
           </div>
 
@@ -54,7 +56,7 @@ export default class PostingItem extends React.Component{
 
 
         <div className="description">
-          {description}
+            {description}
         </div>
 
       </div>

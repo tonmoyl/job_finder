@@ -6,3 +6,15 @@
 .header-right {
   margin: auto 0px;
 }
+
+
+.description {
+  white-space: pre-line;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.posting-item button {
+  position: absolute;
+  left: calc(100% - 100px);
+}
