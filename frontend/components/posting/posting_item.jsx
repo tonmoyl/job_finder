@@ -27,25 +27,31 @@ export default class PostingItem extends React.Component{
           Back
         </button>
 
-        <div className="role">
-          {role}
+        <div className="posting-header" >
+          <div className="logo header-left">
+            <img src={logo_url} alt="logo" />
+          </div>
+
+          <div className="header-right">
+            <div className="role">
+              {role}
+            </div>
+
+            <div className="company-name">
+              {company}
+            </div>
+
+            <div className="address">
+              {address}
+            </div>
+
+            <div className="link">
+              <a href={link_url}>{link_url}</a>
+            </div>
+          </div>
+
         </div>
 
-        <div className="company-name">
-          {company}
-        </div>
-
-        <div className="address">
-          {address}
-        </div>
-
-        <div className="link">
-          <a href=""></a>
-        </div>
-
-        <div className="logo">
-          <img src="" alt="" />
-        </div>
 
         <div className="description">
           {description}

@@ -45,8 +45,9 @@ export default class PersonalForm extends React.Component {
         <button className="btn" onClick={this.props.goBack}>
           Back
         </button>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="personal-form">
           <label>
+            <div className="caption">About Me</div>
             <input
               type="text"
               value={this.state.about_me}
@@ -54,7 +55,7 @@ export default class PersonalForm extends React.Component {
               placeholder="Enter About Me"
             />
           </label>
-          <label>
+          <label> <div className="caption">Skills </div>
             <input
               type="text"
               value={this.state.skills}
@@ -62,7 +63,7 @@ export default class PersonalForm extends React.Component {
               placeholder="Enter Skills"
             />
           </label>
-          <label>
+          <label> <div className="caption">Education </div>
             <input
               type="text"
               value={this.state.education}
@@ -70,7 +71,7 @@ export default class PersonalForm extends React.Component {
               placeholder="Enter Education"
             />
           </label>
-          <label>
+          <label> <div className="caption">Looking For </div>
             <input
               type="text"
               value={this.state.looking_for}

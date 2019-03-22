@@ -1,0 +1,18 @@
+.personal-form label {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.personal-form .caption{
+  width: 100px;
+}
+
+.personal-form input {
+  width: 400px;
+  border: 0px;
+}
+
+.edit-personal .session-submit {
+  background-color: orange;
+}
