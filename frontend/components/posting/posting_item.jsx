@@ -4,12 +4,14 @@ export default class PostingItem extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      applied: false
+      applied: this.props.applied
     }
   }
 
-  componentDidUpdate(prevProps) {
-    
+  componentShouldUpdate(prevProps) {
+    if (this.props.applied !== this.state.applied) {
+      this.setState({applied: this.props.applied})
+    }
   }
 
   render() {
@@ -29,10 +31,25 @@ export default class PostingItem extends React.Component{
       description = this.props.postingItem.description;
     }
 
+    let applied = "apply";
+    let processForm = () => {
+      this.props.createSubmit(this.props.postingItem.id);
+    }
+    if (this.props.applied) {
+      applied = "applied";
+      processForm = () => {
+        this.props.deleteSubmit(this.props.postingItem.id);
+      }
+    }
+
     return (
       <div className="posting-item">
-        <button className="btn" onClick={this.props.goBack}>
+        <button className="back-btn" onClick={this.props.goBack}>
           Back
+        </button>
+
+        <button className="apply-btn" onClick={processForm}>
+          {applied}
         </button>
 
         <div className="posting-header" >

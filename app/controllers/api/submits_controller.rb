@@ -24,6 +24,6 @@ class Api::SubmitsController < ApplicationController
   private
 
   def submit_params
-    params.require(:submit).permit(:id)
+    params.permit(:id)
   end
 end
