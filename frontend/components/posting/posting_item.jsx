@@ -8,12 +8,6 @@ export default class PostingItem extends React.Component{
     }
   }
 
-  componentShouldUpdate(prevProps) {
-    if (this.props.applied !== this.state.applied) {
-      this.setState({applied: this.props.applied})
-    }
-  }
-
   render() {
     let company = "";
     let role = "";
