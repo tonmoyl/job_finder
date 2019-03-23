@@ -17,8 +17,6 @@ const postingsReducer = (state = predefinedState, action) => {
       newState = merge({}, state);
       delete newState[action.postingId];
       return newState;
-    case LOGOUT_CURRENT_USER:
-      return predefinedState;
     default:
       return state;
   }

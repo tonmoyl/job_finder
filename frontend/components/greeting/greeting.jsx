@@ -14,7 +14,9 @@ export default class Greeting extends React.Component {
     }
 
     this.props.fetchPostings();
-    this.props.fetchSubmits();
+    if (this.props.currentUser) {
+      this.props.fetchSubmits();
+    }
   }
 
 
