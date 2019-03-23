@@ -85,10 +85,16 @@ export default class Search extends React.Component {
               <input
                 type="submit"
                 value="Search"
+                className="search-btn"
                 />
             </form>
 
-            <button onClick={this.clearInput}>Clear</button>
+            <button
+              onClick={this.clearInput}
+              className="clear-btn"
+              >
+              Clear
+            </button>
 
           </div>
         </div>
