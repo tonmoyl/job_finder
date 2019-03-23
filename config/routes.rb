@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'submits/create'
+  get 'submits/destroy'
+  get 'submits/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api, defaults: {format: :json} do
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :postings, except: [:new, :edit]
     resources :credentials, except: [:new, :edit]
+    resources :submits, only: [:create, :destroy, :index]
   end
 
   root "static_pages#root"
