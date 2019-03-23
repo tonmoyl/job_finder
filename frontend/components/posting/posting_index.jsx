@@ -15,10 +15,6 @@ export default class PostingIndex extends React.Component{
     // this.renderOrder = this.renderOrder.bind(this);
   }
 
-  componentWillMount(){
-    this.props.fetchPostings();
-  }
-
   componentWillReceiveProps(nextProps) {
     this.setState({
       postingIds: nextProps.postingIds

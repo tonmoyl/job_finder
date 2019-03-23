@@ -28,7 +28,7 @@ export const removeSubmit = submit => {
 export const fetchSubmits = () => {
   return dispatch => {
     return APIUtil.fetchSubmits().then( (submits) => {
-      return dispatch(receiveSubmit(submit));
+      return dispatch(receiveSubmits(submits));
     })
   }
 }

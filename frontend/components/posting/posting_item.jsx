@@ -3,6 +3,13 @@ import React from 'react';
 export default class PostingItem extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      applied: false
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    
   }
 
   render() {
@@ -20,7 +27,6 @@ export default class PostingItem extends React.Component{
       address = this.props.postingItem.address;
       link_url = this.props.postingItem.link_url;
       description = this.props.postingItem.description;
-
     }
 
     return (

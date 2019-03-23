@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom';
 import PostingItem from './posting_item';
 
 const mapStateToProps = (state, ownProps) => {
-  const jobId = ownProps.match.params.jobId
-  const postings = state.entities.postings
-  const postingItem = postings[jobId]
+  const jobId = ownProps.match.params.jobId;
+  const postings = state.entities.postings;
+  const postingItem = postings[jobId];
+  
 
   return {
     goBack: ownProps.history.goBack,
