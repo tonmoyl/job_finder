@@ -1,7 +1,7 @@
 class Api::SubmitsController < ApplicationController
 
   def create
-    @submit = Submit.new(user_id: current_user.id, posting_id: submit_params[:posting_id])
+    @submit = Submit.new(user_id: current_user.id, posting_id: submit_params[:id])
 
     if @submit.save
       render json: @submit
@@ -11,7 +11,7 @@ class Api::SubmitsController < ApplicationController
   end
 
   def destroy
-    @submit = current_user.submitted_association.find_by(posting_id: submit_params[:posting_id]);
+    @submit = current_user.submitted_association.find_by(posting_id: submit_params[:id]);
     @submit.destroy
     render json: @submit
   end
@@ -24,6 +24,6 @@ class Api::SubmitsController < ApplicationController
   private
 
   def submit_params
-    params.require(:submit).permit(:posting_id)
+    params.require(:submit).permit(:id)
   end
 end
