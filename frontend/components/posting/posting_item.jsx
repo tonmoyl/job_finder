@@ -4,26 +4,41 @@ export default class PostingItem extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      applied: this.props.applied
+      applied: this.props.applied,
+      company: "",
+      role: "",
+      logo_url: "",
+      address: "",
+      link_url: "",
+      description: "",
+      descriptions: ""
+    }
+
+    if (this.props.postingItem) {
+        this.state.company = this.props.postingItem.company;
+        this.state.role = this.props.postingItem.role;
+        this.state.logo_url = this.props.postingItem.logo_url;
+        this.state.address = this.props.postingItem.address;
+        this.state.link_url = this.props.postingItem.link_url;
+        this.state.description = this.props.postingItem.description;
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.company != nextProps.postingItem.company) {
+      this.setState({
+        company: nextProps.postingItem.company,
+        role: nextProps.postingItem.role,
+        logo_url: nextProps.postingItem.logo_url,
+        address: nextProps.postingItem.address,
+        link_url: nextProps.postingItem.link_url,
+        description: nextProps.postingItem.description,
+        applied: nextProps.applied
+      })
     }
   }
 
   render() {
-    let company = "";
-    let role = "";
-    let logo_url = "";
-    let address = "";
-    let link_url = "";
-    let description = "";
-    let descriptions = "";
-    if (this.props.postingItem) {
-      company = this.props.postingItem.company;
-      role = this.props.postingItem.role;
-      logo_url = this.props.postingItem.logo_url;
-      address = this.props.postingItem.address;
-      link_url = this.props.postingItem.link_url;
-      description = this.props.postingItem.description;
-    }
 
     let applied = "apply";
     let processForm = () => {
@@ -48,24 +63,24 @@ export default class PostingItem extends React.Component{
 
         <div className="posting-header" >
           <div className="logo header-left">
-            <img src={logo_url} alt="logo" />
+            <img src={this.state.logo_url} alt="logo" />
           </div>
 
           <div className="header-right">
             <div className="role">
-              {role}
+              {this.state.role}
             </div>
 
             <div className="company-name">
-              {company}
+              {this.state.company}
             </div>
 
             <div className="address">
-              {address}
+              {this.state.address}
             </div>
 
             <div className="link">
-              <a href={link_url}>Link to Website</a>
+              <a href={this.state.link_url}>Link to Website</a>
             </div>
           </div>
 
@@ -73,7 +88,7 @@ export default class PostingItem extends React.Component{
 
 
         <div className="description">
-            {description}
+            {this.state.description}
         </div>
 
       </div>
