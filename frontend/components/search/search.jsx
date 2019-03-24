@@ -85,7 +85,7 @@ export default class Search extends React.Component {
               <input
                 type="submit"
                 value="Search"
-                className="search-btn"
+                className="search-btn button"
                 />
             </form>
 

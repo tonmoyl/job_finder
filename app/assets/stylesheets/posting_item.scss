@@ -1,6 +1,7 @@
 .posting-header {
   display: flex;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .header-right {
@@ -14,12 +15,17 @@
   margin: 30px auto;
 }
 
-.posting-item .back-btn {
+.back-btn {
   position: absolute;
-  left: calc(100% - 100px);
+  left: calc(100% - 150px);
+  top: 75px;
+  border: none;
+  background-color: teal;
+  color: white;
 }
 
 .posting-item .apply-btn {
   position: absolute;
+  top: 75px;
   left: 100px;
 }

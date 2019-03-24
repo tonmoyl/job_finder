@@ -25,7 +25,8 @@ export default class PostingItem extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.company != nextProps.postingItem.company) {
+    if (nextProps.postingItem && this.state.company != nextProps.postingItem.company) {
+
       this.setState({
         company: nextProps.postingItem.company,
         role: nextProps.postingItem.role,
@@ -53,11 +54,11 @@ export default class PostingItem extends React.Component{
 
     return (
       <div className="posting-item">
-        <button className="back-btn" onClick={this.props.goBack}>
+        <button className="back-btn button" onClick={this.props.goBack}>
           Back
         </button>
 
-        <button className="apply-btn" onClick={processForm}>
+        <button className="apply-btn button" onClick={processForm}>
           {applied}
         </button>
 
