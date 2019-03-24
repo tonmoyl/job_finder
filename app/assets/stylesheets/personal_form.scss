@@ -1,3 +1,7 @@
+.personal-form {
+  margin-top: 100px;
+}
+
 .personal-form label {
   display: flex;
   justify-content: space-around;
@@ -8,11 +12,32 @@
   width: 100px;
 }
 
-.personal-form input {
-  width: 400px;
+.personal-form textarea {
+  width: 65%;
   border: 0px;
+  height: 100%;
+  color: teal;
 }
 
-.edit-personal .session-submit {
-  background-color: orange;
+.skills.textarea {
+  height: 125px;
+}
+
+.education.textarea {
+  height: 40px;
+}
+
+.looking-for.textarea {
+  height: 150px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.session-submit.submit-btn {
+  position: absolute;
+  width: 100px;
+  margin: auto;
+  left: calc(50% - 50px);
 }

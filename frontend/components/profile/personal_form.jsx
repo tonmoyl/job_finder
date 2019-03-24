@@ -42,44 +42,48 @@ export default class PersonalForm extends React.Component {
   render() {
     return (
       <div className='edit-personal'>
-        <button className="back-btn" onClick={this.props.goBack}>
+        <button className="back-btn button" onClick={this.props.goBack}>
           Back
         </button>
         <form onSubmit={this.handleSubmit} className="personal-form">
           <label>
-            <div className="caption">About Me</div>
-            <input
+            <div className="about-me caption">About Me</div>
+            <textarea
+              className="about-me textarea"
               type="text"
               value={this.state.about_me}
               onChange={this.update('about_me')}
               placeholder="Enter About Me"
             />
           </label>
-          <label> <div className="caption">Skills </div>
-            <input
+          <label> <div className="skills caption">Skills </div>
+            <textarea
+              className="skills textarea"
               type="text"
               value={this.state.skills}
               onChange={this.update('skills')}
               placeholder="Enter Skills"
             />
           </label>
-          <label> <div className="caption">Education </div>
-            <input
+          <label> <div className="education caption">Education </div>
+            <textarea
+              className="education textarea"
               type="text"
               value={this.state.education}
               onChange={this.update('education')}
               placeholder="Enter Education"
             />
           </label>
-          <label> <div className="caption">Looking For </div>
-            <input
+          <label> <div className="looking-for caption">Looking For </div>
+            <textarea
+              className="looking-for textarea"
               type="text"
               value={this.state.looking_for}
               onChange={this.update('looking_for')}
               placeholder="Enter Job Description of What You Are Looking For"
             />
           </label>
-          <input className="session-submit submit-btn" type="submit" value="Edit Personal" />
+          <input className="session-submit submit-btn button" type="submit" value="Edit Personal" />
         </form>
       </div>
     )
