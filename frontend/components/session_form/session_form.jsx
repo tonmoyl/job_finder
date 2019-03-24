@@ -67,8 +67,6 @@ export default class SessionForm extends React.Component {
 
     return (
       <div className='session-form-container'>
-        <div className="logo"></div>
-        <br/>
         <h1 className="session-title">{this.props.formType}</h1>
 
         <form onSubmit={this.handleSubmit} className="session-form-box">
@@ -94,11 +92,12 @@ export default class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit submit-btn" type="submit" value={this.props.formType} />
+            <input className="session-submit submit-btn button" type="submit" value={this.props.formType} />
             <h5 className="errors">
               {this.renderErrors()}
             </h5>
-            <button className="demo submit-btn" onClick={this.demoLogin}>Demo Login</button>
+            <button className="demo submit-btn button" onClick={this.demoLogin}>Demo Login</button>
+            <br />
               {footer}
           </div>
         </form>
