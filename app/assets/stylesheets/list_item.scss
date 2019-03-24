@@ -1,11 +1,17 @@
 .list-item {
   margin: 20px;
-  background-color: red;
   position: relative
 }
 
 .list-item a {
   display: flex;
+  border: 1px solid lightgray;
+  transition: 0.5s;
+}
+
+.list-item a:hover {
+  background-color: teal;
+  color: white;
 }
 
 .logo {

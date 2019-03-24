@@ -1,8 +1,34 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #333;
+  background-color: #283b7e;
   height: 50px;
+}
+
+.header-group {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-group h2, .header-group a, .header-group button {
+  margin: auto;
+}
+
+.header-group a, .header-button {
+  padding: 15px;
+}
+
+.header-button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.header-group a:hover, .header-button:hover {
+  background-color: white;
+  font-style: none;
 }
 
 .header-title {
