@@ -60,10 +60,6 @@ export default class Search extends React.Component {
     return e => this.setState({ [property]: e.target.value })
   };
 
-  filterFunction() {
-    console.log('hitx2')
-  }
-
   clearInput() {
     document.getElementById('search-input').value = "";
     this.setState({viewIds: this.state.allIds});
