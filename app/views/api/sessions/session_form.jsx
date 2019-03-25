@@ -95,6 +95,7 @@ export default class SessionForm extends React.Component {
             <h5 className="errors">
               {this.renderErrors()}
             </h5>
+            <br/>
             <button className="demo submit-btn" onClick={this.demoLogin}>Demo Login</button>
           </div>
         </form>
