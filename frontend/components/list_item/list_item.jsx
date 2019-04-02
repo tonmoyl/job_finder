@@ -7,6 +7,7 @@ export default class ListItem extends React.Component{
   }
 
   render() {
+
     return (
       <div className="list-item">
         <Link to={`/job/${this.props.id}`}>

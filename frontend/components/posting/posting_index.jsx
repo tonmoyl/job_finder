@@ -6,13 +6,8 @@ export default class PostingIndex extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      order: "newest",
       postingIds: []
     }
-    // this.updateOrder = this.updateOrder.bind(this);
-    // this.sortAlphabetical = this.sortAlphabetical.bind(this);
-    // this.sortUpdate = this.sortUpdate.bind(this);
-    // this.renderOrder = this.renderOrder.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,17 +32,25 @@ export default class PostingIndex extends React.Component{
     } else {
       postingIds = this.props.postingIds;
     }
+
     let postings = postingIds.map( (id) => {
-        count ++;
+      count ++;
 
-        const followLink = `/job/${id}`;
+      return (
+        <li key={id}>
+          <ListItem posting={this.props.postings[id]} />
+        </li>
+      );
+    });
 
-        return (
-          <li key={id}>
-            <ListItem posting={this.props.postings[id]} />
-          </li>
-        );
-      });
+    let createButton;
+    if (this.props.currentId) {
+      createButton = (
+        <Link to="/new_posting">
+          <div className="create-btn">Create Posting</div>
+        </Link>
+      )
+    }
 
     return(
       <div id={this.props.componentType} className={this.props.componentType}>
@@ -55,6 +58,7 @@ export default class PostingIndex extends React.Component{
           <div className="header-title">
             <h2>{this.props.componentType}</h2>
           </div>
+          {createButton}
           <div className="postingslist-footer">
             <h4>{count} postings</h4>
           </div>

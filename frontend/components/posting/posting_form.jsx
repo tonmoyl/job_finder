@@ -18,37 +18,6 @@ export default class PostingForm extends React.Component{
 
   };
 
-  componentDidMount(){
-    // const postingId = this.props.match.params.postingId;
-    // if (this.props.formType === "Update") {
-    //   this.props.fetchPosting(this.props.match.params.postingId).then( ({posting}) => {
-    //     this.setState({
-    //       id: posting.id,
-    //       company: posting.company,
-    //       logo_url: posting.logo_url,
-    //       address: posting.address,
-    //       link_url: posting.link_url,
-    //       description: posting.description
-    //     });
-    //   })
-    // };
-  };
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.postingId !== nextProps.match.params.postingId) {
-      this.props.fetchPosting(nextProps.match.params.postingId).then( ({posting}) => {
-        this.setState({
-          id: posting.id,
-          company: posting.company,
-          logo_url: posting.logo_url,
-          address: posting.address,
-          link_url: posting.link_url,
-          description: posting.description
-        });
-      })
-    };
-  };
-
   update(property) {
     return e => this.setState({ [property]: e.target.value })
   };
@@ -59,43 +28,16 @@ export default class PostingForm extends React.Component{
     const posting = merge({}, this.state);
 
     this.props.processForm(posting)
-
-    // if (this.state.notebook_id === null) {
-    //   this.setState({body: parsedBody, postingbook_id: Object.keys(this.props.notebooks)[0]});
-    //   this.state.notebook_id = Object.keys(this.props.notebooks)[0];
-    // }
-    //
-    // this.state.body = parsedBody;
-    // const posting = merge({}, this.state, {body: parsedBody});
-    // this.props.processForm(note).then( ()=> {
-    //   if (this.props.formType === "Create") {
-    //     let postingIdx = Object.keys(this.props.notes);
-    //     let newIdx = postingIdx[postingIdx.length-1];
-    //     this.props.history.push(`/main/${newIdx}`);
-    //   }
-    // });
   };
-
-  renderErrors() {
-    // if (this.props.errors) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.map( (error, idx) => (
-    //         <li key={`error-${idx}`}>
-    //           {error}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   )
-    // }
-  }
 
 
 
   render(){
     return (
-      <div id="posting-document" className='posting-show'>
-        Hello
+      <div id="posting-document" className='posting'>
+        <div className="header">
+          Create new Posting
+        </div>
         <form className="posting-form" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>

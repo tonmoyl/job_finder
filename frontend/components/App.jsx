@@ -31,6 +31,7 @@ const App = () => (
     </Switch>
 
     <ProtectedRoute exact path="/personal" component={EditPersonal} />
+    <ProtectedRoute exact path="/new_posting" component={PostingForm} />
 
 
     <Route exact path="/" component={Search} />
