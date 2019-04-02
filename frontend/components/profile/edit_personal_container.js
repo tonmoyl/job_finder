@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PersonalInfo from './personal_form';
 import { updatePersonal, fetchPersonal } from '../../actions/personal_actions';
-import { fetchSubmits } from '../../actions/submit_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,8 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (profile) => dispatch(updatePersonal(profile)),
-    fetchPersonal: (personal) => dispatch(fetchPersonal()),
-    fetchSubmits: () => dispatch(fetchSubmits())
+    fetchPersonal: (personal) => dispatch(fetchPersonal())
   }
 }
 
