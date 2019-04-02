@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PersonalInfo from './personal_form';
 import { updatePersonal, fetchPersonal } from '../../actions/personal_actions';
+import { fetchSubmits } from '../../actions/submit_actions';
 
-const mapStateToProps = ({ entities }, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    session: state.session.id,
     goBack: ownProps.history.goBack,
     componentType: "personal-info"
   };
@@ -14,7 +16,8 @@ const mapStateToProps = ({ entities }, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (profile) => dispatch(updatePersonal(profile)),
-    fetchPersonal: (personal) => dispatch(fetchPersonal())
+    fetchPersonal: (personal) => dispatch(fetchPersonal()),
+    fetchSubmits: () => dispatch(fetchSubmits())
   }
 }
 

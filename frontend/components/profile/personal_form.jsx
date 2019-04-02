@@ -15,6 +15,20 @@ export default class PersonalForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.session !== prevProps.session) {
+  //     this.props.fetchPersonal().then( ({personal}) => {
+  //       this.setState({
+  //         id: personal.id,
+  //         about_me: personal.about_me,
+  //         education: personal.education,
+  //         skills: personal.skills,
+  //         looking_for: personal.looking_for
+  //       })
+  //     })
+  //   }
+  // }
+
   componentDidMount() {
     this.props.fetchPersonal().then( ({personal}) => {
       this.setState({
@@ -25,6 +39,8 @@ export default class PersonalForm extends React.Component {
         looking_for: personal.looking_for
       })
     })
+
+    this.props.fetchSubmits();
   }
 
   update(field) {
