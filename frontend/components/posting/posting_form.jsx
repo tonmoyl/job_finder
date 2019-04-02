@@ -38,7 +38,7 @@ export default class PostingForm extends React.Component{
         <button className="back-btn button" onClick={this.props.goBack}>
           Back
         </button>
-        <div className="header">
+        <div className="posting-title">
           Create new Posting
         </div>
         <form className="posting-form" onSubmit={this.handleSubmit}>
@@ -52,7 +52,7 @@ export default class PostingForm extends React.Component{
                 placeholder="Company Posting"
                 />
             </label>
-
+            <br/>
             <label>
               <input
                 type="text"
@@ -62,7 +62,7 @@ export default class PostingForm extends React.Component{
                 placeholder="Role of the Position"
                 />
             </label>
-
+            <br/>
             <label>
               <input
                 type="text"
@@ -72,7 +72,7 @@ export default class PostingForm extends React.Component{
                 placeholder="Enter URL"
                 />
             </label>
-
+            <br/>
             <label>
               <input
                 type="text"
@@ -82,7 +82,7 @@ export default class PostingForm extends React.Component{
                 placeholder="Enter address"
                 />
             </label>
-
+            <br/>
             <label>
               <input
                 type="text"
@@ -92,7 +92,7 @@ export default class PostingForm extends React.Component{
                 placeholder="Enter link URL"
                 />
             </label>
-
+            <br/>
             <label>
               <input
                 type="text"
@@ -102,9 +102,9 @@ export default class PostingForm extends React.Component{
                 placeholder="Description Posting"
                 />
             </label>
-
+            <br/>
           <input
-            className="posting-action-btn submit-btn"
+            className="posting-action-btn submit-btn button"
             type="submit"
             value={this.props.formType} />
         </div>

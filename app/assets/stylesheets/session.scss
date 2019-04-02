@@ -3,7 +3,12 @@
   text-align: center;
 }
 
-.session-title {
+.posting {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.session-title, .posting-title {
   font-size: 20px;
 }
 
@@ -14,7 +19,18 @@
   width: 250px;
 }
 
-.session-form .submit-btn {
+.posting-form input {
+  border: none;
+  color: teal;
+  margin: 10px;
+  width: 500px;
+}
+
+.posting-description {
+  height: 100px;
+}
+
+.session-form .submit-btn, .posting-form .submit-btn {
   color: white;
   height: 30px;
   width: 250px;
