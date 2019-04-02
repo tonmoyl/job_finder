@@ -7,7 +7,8 @@ import { createPosting } from '../../actions/posting_actions';
 const mapStateToProps = ({ session, entities: { users } }, ownProps) => {
   return {
     currentUser: users[session.id],
-    formType: "Create"
+    formType: "Create",
+    goBack: ownProps.history.goBack,
   };
 };
 

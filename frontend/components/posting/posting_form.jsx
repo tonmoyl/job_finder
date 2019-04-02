@@ -35,6 +35,9 @@ export default class PostingForm extends React.Component{
   render(){
     return (
       <div id="posting-document" className='posting'>
+        <button className="back-btn button" onClick={this.props.goBack}>
+          Back
+        </button>
         <div className="header">
           Create new Posting
         </div>

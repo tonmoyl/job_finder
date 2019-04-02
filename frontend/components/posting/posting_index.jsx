@@ -46,9 +46,11 @@ export default class PostingIndex extends React.Component{
     let createButton;
     if (this.props.currentId) {
       createButton = (
-        <Link to="/new_posting">
-          <div className="create-btn">Create Posting</div>
-        </Link>
+        <div className="create-btn">
+          <Link to="/new_posting">
+            Create Posting
+          </Link>
+        </div>
       )
     }
 
@@ -58,10 +60,10 @@ export default class PostingIndex extends React.Component{
           <div className="header-title">
             <h2>{this.props.componentType}</h2>
           </div>
-          {createButton}
           <div className="postingslist-footer">
             <h4>{count} postings</h4>
           </div>
+          {createButton}
         </div>
         <div className="posting-list">
           <ul>

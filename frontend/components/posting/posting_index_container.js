@@ -6,7 +6,7 @@ import { fetchPostings } from '../../actions/posting_actions';
 const mapStateToProps = (state, ownProps) => {
   
   return {
-    componentType: "recent",
+    componentType: "POSTINGS",
     postings: state.entities.postings,
     postingIds: ownProps.viewIds,
     currentId: state.session.id
